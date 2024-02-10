@@ -1,0 +1,52 @@
+#include <stdio.h> // Include the standard input/output library
+#include <stdlib.h> // Include the standard library for utility functions
+
+int main() {
+    // Declare variables for the operator and operands
+    char operator;
+    double num1, num2;
+
+    // Ask the user to input an operator
+    printf("Enter an operator (+, -, *, /): ");
+    scanf("%c", &operator);
+
+    // Ask the user to input the first operand
+    printf("Enter the first operand: ");
+    scanf("%lf", &num1);
+
+    // Ask the user to input the second operand
+    printf("Enter the second operand: ");
+    scanf("%lf", &num2);
+
+    // Use a switch statement to perform the arithmetic operation based on the operator
+    switch (operator) {
+        case '+':
+            // Print the result of addition
+            printf("%.2lf + %.2lf = %.2lf\n", num1, num2, num1 + num2);
+            break;
+        case '-':
+            // Print the result of subtraction
+            printf("%.2lf - %.2lf = %.2lf\n", num1, num2, num1 - num2);
+            break;
+        case '*':
+            // Print the result of multiplication
+            printf("%.2lf * %.2lf = %.2lf\n", num1, num2, num1 * num2);
+            break;
+        case '/':
+            // Check if the second operand is zero
+            if (num2 == 0) {
+                // Print an error message if division by zero is attempted
+                printf("Error: Division by zero is not allowed.\n");
+            } else {
+                // Print the result of division
+                printf("%.2lf / %.2lf = %.2lf\n", num1, num2, num1 / num2);
+            }
+            break;
+        default:
+            // Print an error message if the operator is invalid
+            printf("Error: Invalid operator.\n");
+    }
+
+    // Return zero to indicate successful execution
+    return 0;
+}
